@@ -2,7 +2,7 @@
 	import SectionWrapper from './SectionWrapper.svelte';
 </script>
 
-<SectionWrapper id={'About'}>
+<div>
 	<div
 		class="relative overflow-clip bg-black bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] px-2 py-[72px] text-white sm:py-24"
 	>
@@ -62,4 +62,4 @@
 			</div>
 		</div>
 	</div>
-</SectionWrapper>
+</div>
