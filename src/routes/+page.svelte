@@ -1,7 +1,5 @@
 <script lang="ts">
-	import Banner from '../components/Banner.svelte';
-	import Header from '../components/Header.svelte';
+	import Hero from '../components/Hero.svelte';
 </script>
 
-<Banner />
-<Header />
+<Hero />
