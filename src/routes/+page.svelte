@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CallToAction from '../components/CallToAction.svelte';
 	import FaQs from '../components/FAQs.svelte';
 	import Features from '../components/Features.svelte';
 	import Hero from '../components/Hero.svelte';
@@ -11,3 +12,4 @@
 <Features />
 <ProductShowCase />
 <FaQs />
+<CallToAction />
