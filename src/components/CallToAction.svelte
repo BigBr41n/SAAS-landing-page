@@ -17,7 +17,7 @@
 		</p>
 		<form action="" class="mx-auto mt-10 flex max-w-sm flex-col gap-2.5 sm:flex-row">
 			<input
-				class="h-12 flex-1 rounded-lg bg-white/20 px-5 font-medium"
+				class="h-12 rounded-lg bg-white/20 px-5 font-medium sm:flex-1"
 				type="email"
 				placeholder="your@email.com"
 			/>
