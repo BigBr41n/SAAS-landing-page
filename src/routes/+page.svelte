@@ -1,4 +1,5 @@
 <script lang="ts">
+	import FaQs from '../components/FAQs.svelte';
 	import Features from '../components/Features.svelte';
 	import Hero from '../components/Hero.svelte';
 	import LogoTicker from '../components/LogoTicker.svelte';
@@ -9,3 +10,4 @@
 <LogoTicker />
 <Features />
 <ProductShowCase />
+<FaQs />

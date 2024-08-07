@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<div class="bg-black bg-gradient-to-b from-black to-[#5D2AC8] py-[72px] text-white">
+<div class="bg-black bg-gradient-to-b from-black to-[#5D2AC8] px-4 py-[72px] text-white">
 	<div class="container">
 		<h2 class="text-center text-5xl font-bold tracking-tighter sm:text-6xl">Intuitive interface</h2>
 		<div class="mx-auto max-w-xl">
