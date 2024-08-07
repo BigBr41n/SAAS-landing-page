@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class=" bg-black py-[72px] text-center text-white sm:py-24">
+<div class=" overflow-hidden bg-black py-[72px] text-center text-white sm:py-24">
 	<div class="container relative mx-auto max-w-xl px-7">
 		<img class="absolute left-[calc(100%+36px)] top-6" src="/assets/images/helix2.png" alt="" />
 		<img
