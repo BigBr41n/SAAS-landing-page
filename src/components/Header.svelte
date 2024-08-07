@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { openModal } from '../store/index';
 </script>
 
 <header class="flex flex-col bg-black">
@@ -10,6 +11,7 @@
 			<img class="relative h-12 w-12" src="/assets/images/logosaas.png" alt="saas logo" />
 		</div>
 		<button
+			on:click={() => ($openModal = true)}
 			class=" inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white border-opacity-30 sm:hidden"
 		>
 			<i class="fa-solid fa-bars" style="color: white;"></i>
