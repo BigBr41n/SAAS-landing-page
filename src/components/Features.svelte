@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { gsap } from 'gsap';
+
 	const features = [
 		{
 			title: 'Integrated Ecosystem',
@@ -15,6 +18,43 @@
 				'Automate tasks and track progress with confidence using our smart tracking tools.'
 		}
 	];
+
+	onMount(() => {
+		const cards = document.querySelectorAll('.feature-card');
+
+		cards.forEach((card) => {
+			const shimmer = card.querySelector('.shimmer');
+
+			gsap.set(shimmer, {
+				x: '-100%',
+				opacity: 0,
+				background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)'
+			});
+
+			card.addEventListener('mouseenter', () => {
+				gsap.to(shimmer, {
+					x: '100%',
+					opacity: 1,
+					duration: 1,
+					ease: 'power2.inOut',
+					onComplete: () => {
+						gsap.set(shimmer, { x: '-100%', opacity: 0 });
+					}
+				});
+			});
+
+			card.addEventListener('mouseleave', () => {
+				gsap.killTweensOf(shimmer);
+				gsap.to(shimmer, {
+					opacity: 0,
+					duration: 0.5,
+					onComplete: () => {
+						gsap.set(shimmer, { x: '-100%' });
+					}
+				});
+			});
+		});
+	});
 </script>
 
 <div class="bg-black py-[72px] text-white sm:py-24">
@@ -28,7 +68,10 @@
 		</div>
 		<div class="mt-16 flex max-w-7xl flex-col gap-4 sm:flex-1 sm:flex-row">
 			{#each features as feature}
-				<div class="flex-1 rounded-xl border border-white/30 px-5 py-10 text-center">
+				<div
+					class="feature-card relative flex-1 overflow-hidden rounded-xl border border-white/30 px-5 py-10 text-center"
+				>
+					<div class="shimmer pointer-events-none absolute inset-0"></div>
 					<div
 						class="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-white text-black"
 					>
@@ -52,3 +95,9 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.feature-card {
+		transition: all 0.3s ease;
+	}
+</style>
