@@ -1,4 +1,23 @@
 <script lang="ts">
+	/* 	import { onMount } from 'svelte';
+	import { gsap } from 'gsap';
+
+	onMount(() => {
+		const floatingAnimation = (target: string, delay: number) => {
+			gsap.to(target, {
+				y: '+=15',
+				x: '+=5',
+				duration: 2,
+				ease: 'sine.inOut',
+				yoyo: true,
+				repeat: -1,
+				delay: delay
+			});
+		};
+
+		floatingAnimation('.cursor-image', 0);
+		floatingAnimation('.message-image', 1);
+	}); */
 </script>
 
 <div>
@@ -30,7 +49,7 @@
 				<div class="relative inline-flex">
 					<img
 						src="/assets/images/cursor.png"
-						class="absolute right-[517px] top-[108px]"
+						class="cursor-image floating-image absolute right-[517px] top-[108px]"
 						height="200"
 						width="200"
 						alt=""
@@ -39,7 +58,7 @@
 						src="/assets/images/message.png"
 						height="200"
 						width="200"
-						class="absolute left-[538px] top-[56px]"
+						class="message-image floating-image absolute left-[538px] top-[56px]"
 						alt=""
 					/>
 
@@ -52,8 +71,8 @@
 			</div>
 			<div class="flex justify-center">
 				<p class="mt-8 max-w-md text-center text-xl">
-					Celebrate the joy of accomplishment with an app designed to track progress , motivation
-					your efforts, and celebrate your success.
+					Celebrate the joy of accomplishment with an app designed to track progress, motivate your
+					efforts, and celebrate your success.
 				</p>
 			</div>
 			<div class="mt-8 flex justify-center">
@@ -62,3 +81,28 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	@keyframes float {
+		0%,
+		100% {
+			transform: translate(0, 0);
+		}
+		50% {
+			transform: translate(5px, -10px);
+		}
+	}
+
+	.floating-image {
+		animation: float 4s ease-in-out infinite;
+		will-change: transform;
+	}
+
+	.cursor-image {
+		animation-delay: 0s;
+	}
+
+	.message-image {
+		animation-delay: 2s;
+	}
+</style>
